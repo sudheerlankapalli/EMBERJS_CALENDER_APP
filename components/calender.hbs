@@ -1,0 +1,11 @@
+{{#each this.months as |month|}}
+  <h2>{{month.name}}</h2>
+  <ul>
+    {{#each (this.getDaysArray 2024 @index) as |day|}}
+      <li>
+        {{day}}
+        <ChartComponent @monthIndex={{@index}} @day={{day}} />
+      </li>
+    {{/each}}
+  </ul>
+{{/each}}
